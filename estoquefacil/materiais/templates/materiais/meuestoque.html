@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1>Saldo Total: R$ {{ saldo.total }}</h1>
+    <table>
+      <tr>
+        <th>Material</th>
+        <th>Quantidade</th>
+        <th>Custo</th>
+      </tr>
+      {% for materiais in estoque %}
+      <tr>
+        <td>
+          <a href="/meuestoque/detalhe/{{ materiais.material }}">
+            {{ materiais.material }}
+        </td>
+        <td>{{ materiais.quantidade__sum }}</td>
+        <td>{{ materiais.custo__sum }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

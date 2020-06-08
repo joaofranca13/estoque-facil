@@ -1,4 +1,6 @@
+import datetime
 from django.db import models
+from django.utils import timezone
 from django.core.validators import MinValueValidator
 
 
@@ -17,3 +19,11 @@ class Materiais(models.Model):
     def custo_unitario(self):
         cu = self.custo/self.quantidade
         return cu
+
+    def dias_para_validade(self):
+        dpv = self.datavalidade - timezone.now()
+        return dpv
+
+    def materiais_criticos(self):
+        mc = self.datavalidade <= timezone.now() + datetime.timedelta(days=10)
+        return mc

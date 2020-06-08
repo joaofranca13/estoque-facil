@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Material</th>
+        <th>Quantidade</th>
+        <th>Data Compra</th>
+        <th>Custo</th>
+      </tr>
+      {% for materiais in detail %}
+      <tr>
+        <td>{{ materiais.material }}</td>
+        <td>{{ materiais.quantidade }}</td>
+        <td>{{ materiais.datacompra }}</td>
+        <td>{{ materiais.custo }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
